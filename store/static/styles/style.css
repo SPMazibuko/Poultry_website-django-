@@ -1,0 +1,132 @@
+#hero {
+    height: 60vh;
+    width: 100%;
+    background: #f5ba17;
+    display: "flex";
+    align-items: "center";
+    justify-content: "center";
+}
+
+#hero::after {
+    width: 100%;
+    height: 90%;
+    content: '';
+    position: "absolute";
+    z-index: 10;
+    top: 9%;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5)
+}
+
+#hero video {
+    width: 100%;
+    height: 90%;
+    position: absolute;
+    top: 9%;
+    left: 0;
+    z-index: 5;
+    object-fit: cover;
+    font-family: 'object-fit: cover';
+}
+
+
+#hero .texture {
+    width: 100%;
+    height: 90%;
+    position: absolute;
+    top: 9%;
+    left: 0;
+    z-index: 15;
+    background: url('./texture.png');
+}
+
+#hero .caption {
+    position: relative;
+    z-index: 20;
+    text-align: center;
+    color: #ffffff;
+}
+
+#hero .caption h1 {
+    text-transform: uppercase;
+    font-size: 2em;
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 0.5rem;
+}
+
+#hero .caption h2 {
+    font-weight: 400;
+    font-size: 1.5rem;
+    margin: 0;
+    font-family: 'PT Sans', sans-serif;
+}
+
+#chicks {
+    width: 200px; 
+    height: 200px; 
+    z-index:2; 
+    position: "absolute"; 
+    margin-left:80px;
+}
+
+#chickens {
+    width:150px; 
+    height:150px; 
+    z-index:3; 
+    position: "absolute";
+    margin-top: -120px;
+    margin-left:200px;
+}
+
+#eggs {
+    width:180px;
+    height:180px;
+    z-index:1; 
+    margin-top: -100px;
+}
+
+.client {
+    width: 100%;
+    height: 100%;
+    background: #f5f4f7;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #faf9fa, #fbfbfc);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #fbf8fc, #f8f7fa);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.t-card {
+    padding: 1.8125rem 1.125rem;
+    background-color: white;
+    border-radius: 1.25rem;
+    color: #14425f;
+    height: auto;
+}
+
+@media screen and (min-width:768px) {
+    #hero .caption h1 {
+        font-size: 2.5rem;
+    }
+    #hero .caption h2 {
+        font-size: 1.75rem;
+    }
+}
+
+@media screen and (min-width:992px) {
+    #hero .caption h1 {
+        font-size: 3rem;
+    }
+    #hero .caption h2 {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (min-width:1200px) {
+    #hero .caption h1 {
+        font-size: 4rem;
+    }
+    #hero .caption h2 {
+        font-size: 2.5rem;
+    }
+}

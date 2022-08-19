@@ -1,0 +1,126 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>{% block title %} Farm {% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link href="{% static "styles/style.css"%}" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+        <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon.ico">
+        <link href="https://fonts.googleapis.com/css?family=Oswald:700|PT+Sans&display=swap" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    </head>
+
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-md border-bottom d-flex justify-content-center p-2" style="background-color: #06283D;">
+                <div class="container-fluid">
+                    <a class="navbar-brand text-white" href="#">Happy Chickens</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon text-white"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                            <li class="nav-item active">
+                                <a class="nav-link text-white" aria-current="page" href="/">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="/about">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="/quality">Quality</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="/products">Products</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Services
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="/equipments">Equipment</a></li>
+                                    <li><a class="dropdown-item" href="lessons">Lessons</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="/contacts">Contacts</a>
+                            </li>
+                        </ul>
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+          </header>
+        
+        <div id="content">{% block content %} {% endblock %}</div>
+
+        <div class="container-fluid" style="background-color: #14425f;">
+            <footer class="py-5 px-5">
+              <div class="row">
+                <div class="col-5 col-md-2 mb-3 text-white">
+                  <h5>Branches</h5>
+                  <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Durban - 0875422191</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Cape-Town - 0879665434</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pretoria - 0123659874</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Head-Office - 0123698754</a></li>
+                  </ul>
+                </div>
+          
+                <div class="col-5 col-md-2 mb-3 text-white">
+                  <h5>Trading hours.</h5>
+                  <ul class="nav flex-column">
+                    <li class="nav-item mb-2 text-muted"><strong>Monday - Saturday</strong></li>
+                    <li class="nav-item mb-2 text-muted">08H00 to 17H00</li>
+                    <li class="nav-item mb-2 text-muted"><strong>Sunday/Holidays</strong></li>
+                    <li class="nav-item mb-2 text-muted">08H00 to 13H00</li>
+                  </ul>
+                </div>
+          
+                <div class="col-5 col-md-2 mb-3 text-white">
+                  <h5>Section</h5>
+                  <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Quality</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Products</a></li>
+                  </ul>
+                </div>
+          
+                <div class="col-md-5 offset-md-1 mb-3 text-white">
+                  <form>
+                    <h5>Subscribe to our newsletter</h5>
+                    <p>Monthly digest of what's new and exciting from us.</p>
+                    <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                      <label for="newsletter1" class="visually-hidden">Email address</label>
+                      <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                      <button class="btn btn-primary" type="button">Subscribe</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+          
+              <div class="d-flex flex-column flex-sm-row justify-content-between border-top text-white">
+                <p>&copy; 2022 SPMazibuko, Inc. All rights reserved.</p>
+                <ul class="list-unstyled d-flex">
+                  <li class="ms-3"><a class="link-dark" href="#"><i class="bi bi-twitter" style="font-size:25px;color:#2196F3"></i></a></li>
+                  <li class="ms-3"><a class="link-dark" href="#"><i class="bi bi-instagram" style="font-size:25px;color:#2196F3"></i></a></li>
+                  <li class="ms-3"><a class="link-dark" href="#"><i class="bi bi-facebook" style="font-size:25px;color:#2196F3"></i></a></li>
+                  <li class="ms-3"><a class="link-dark" href="#"><i class="bi bi-whatsapp" style="font-size:25px;color:#2196F3"></i></a></li>
+                </ul>
+              </div>
+            </footer>
+          </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  </body>
+    </body>
+</html>

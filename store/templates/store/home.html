@@ -1,0 +1,255 @@
+{% extends "./base.html" %}
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<main
+  <section class="container py-5">
+    <div id="hero">
+      <video loop muted autoplay preload="auto" >
+        <source src="{% static "hero/compressed.mp4" %}" type="video/mp4">Your browser does not support the video tag.  
+      </video>
+      <div class="caption">
+        <div class="row py-lg-5 text-align-center">
+          <div class="mx-auto">
+            <h1 class="h1 fw-bold" style="color:#FF9F29">Only <br><span style="color:#FFEA11">The Best Poultry Products.<span></h1>
+              <p class="lead text-white">The best poultry you can find around the world, a happy chicken will always lay 
+                more eggs, the more the eggs the lesser the price. To make an online purchase please create an account below</p>
+              <p>
+                <a href="#" class="btn btn btn-warning my-2">Make an account</a>
+              </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container px-4 py-5" id="home">
+      <br><br><br><br>
+      <div class="row featurette py-5">
+        <div class="col-md-7">
+          <h1 class="display-3 fw-bold text-dark">Welcome</h1>
+          <hr class="bg-dark mb-4 mt-0 d-inline-block mx-auto" style="width: 200px; height:3px;">
+          <p class="lead"><span>Welcome to happy chickens where we strive to produce the best poultry products, we also offer poultry farming 
+            equipment and online or facility training on poultry farming.</span></p>
+          <br><br>
+        </div>
+        <div class="col-md-5">
+          <img class="img-responsive img-fluid" style="width: 450px; height:350px;" src="{% static "images/chicks.jpg" %}">
+        </div>
+      </div>
+    </div>
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <div class="row g-4 row-cols-1 row-cols-lg-2">
+          <div class="col d-flex align-items-start">
+            <div>
+              <h2>Popular Services</h2>
+                <p>
+                  <ul style="color: #f5ba17;">
+                    <li>Chickens</li>
+                    <li>Chicks</li>
+                    <li>Eggs(6s, 12s, 18s, 30s, and 60s)</li>
+                    <li>Farming equipments</li>
+                    <li>Chicken Food</li>
+                    <li>.</li>
+                  </ul>
+                </p>
+                <a href="#" class="btn btn btn-warning">
+                  read more..
+                </a>
+              </div>
+            </div>
+            <div class="col d-flex align-items-start">
+              <div>
+                <h2>Latest News</h2>
+                <p><strong>Posted Aug 08 2022</strong>
+                  <br><span class="text-muted">the company reached its highest ever monthly profit.</span>
+                  <br><strong>Posted Aug 08 2022</strong>
+                  <br><span class="text-muted" >we have been voted the #1 producers in organic poultry products in the country for the secon time.</span>
+                </p>
+                <a href="#" class="btn btn-warning">
+                  read more...
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      <div class="col-md-5 order-md-1">
+         <div class="pictures" style="padding:40px">
+            <img src="{% static "images/chicks.jpg" %}" alt="Chicks" id="chicks"/>
+            <img src="{% static "images/chicken1.jpg" %}" alt="Chickens" id="chickens"/>
+            <img src="{% static "images/Brown-eggs.jpg" %}" alt="Egg" id="eggs"/>
+          </div>
+      </div>
+    </div>
+      {% comment %} <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        <div class="col d-flex align-items-start">
+          <div>
+            <h2>Welcome</h2>
+            <p><span>Welcome to happy chickens where we strive to produce the best poultry products, we also offer poultry farming 
+              equipment and online or facility training on poultry farming.</span></p>
+            <br><br>
+            <a href="#" class="btn btn btn-warning">
+              read more...
+            </a>
+          </div>
+        </div>
+        <div class="col d-flex align-items-start">
+          <div>
+            <h2>Popular Services</h2>
+              <p>
+                <ul style="color: #f5ba17;">
+                  <li>Chickens</li>
+                  <li>Chicks</li>
+                  <li>Eggs(6s, 12s, 18s, 30s, and 60s)</li>
+                  <li>Farming equipments</li>
+                  <li>Chicken Food</li>
+                  <li>.</li>
+                </ul>
+              </p>
+              <a href="#" class="btn btn btn-warning">
+                read more..
+              </a>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <div>
+              <h2>Latest News</h2>
+              <p><strong>Posted Aug 08 2022</strong>
+                <br><span>the company reached its highest ever monthly profit.</span>
+                <br><strong>Posted Aug 08 2022</strong>
+                <br><span>we have been voted the #1 producers in organic poultry products in the country for the secon time.</span>
+              </p>
+              <a href="#" class="btn btn-warning">
+                read more...
+              </a>
+            </div>
+          </div>
+        </div>
+      </div> {% endcomment %}
+
+      {% comment %} Testimonials {% endcomment %}
+      <div class="client pt-3 pb-3">
+        <div class="container">
+          <div class="row text-center">
+            <div class="col-12">
+              <h2 class="display-3 fw-bold text-dark">Testimonials</h2>
+              <hr class="bg-dark mb-4 mt-0 d-inline-block mx-auto" style="width: 100px; height:3px;">
+              <p class="p-text text-dark">What our clients are saying about us</p> 
+            </div>
+          </div>
+          <div class="row align-items-md-center text-dark">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <div id="carousel" class="carousel slide" data-bs-ride="carousel">
+              <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="row p-4">
+                      <div class="t-card">
+                        <p class="lh-lg">
+                          <i class="bi bi-quote" aria-hidden="true"></i> I have received the best equipment and training for my start-up chicken business. 
+                            Thank you so much
+                        </p>
+                        <i class="fa fa-quote-right" aria-hidden="true"></i><br>
+                      </div>
+                      <div class="row">                    
+                        <div class="col-sm-2 pt-3">
+                          <img src="{% static "images/profile4.jpg" %}" class="rounded-circle img-responsive img-fluid">
+                        </div>                    
+                      <div class="col-sm-10">
+                        <div class="arrow-down d-none d-lg-block"></div>
+                        <h4><strong>Thandeka Zulu</strong></h4>
+                        <p class="testimonial_subtitle"><span style="color:#FF9F29">Business Woman</span><br>
+                          <span style="color:#FF9F29">ChickenIn</span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="row p-4">
+                    <div class="t-card">
+                      <p class="lh-lg">
+                        <i class="bi bi-quote" aria-hidden="true"></i> I always get the best organic poultry food from here, One of the best in the country 
+                          if not the best 
+                      </p>
+                      <i class="fa fa-quote-right" aria-hidden="true"></i><br>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-2 pt-4">
+                        <img src="{% static "images/profile1.jpg" %}" class="rounded-circle img-responsive img-fluid">
+                      </div>
+                      <div class="col-sm-10">
+                        <div class="arrow-down d-none d-lg-block"></div>
+                        <h4><strong>John Doe</strong></h4>
+                        <p class="testimonial_subtitle"><span style="color:#FF9F29">Lecture</span><br>
+                          <span style="color:#FF9F29">University of Johannesburg</span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="row p-4">
+                    <div class="t-card">
+                      <p class="lh-lg">
+                        <i class="bi bi-quote" aria-hidden="true"></i>My egg bussiness has been booming fast, thanks to my number 1 egg suppliers who deliver 
+                              quality after quality in time
+                      </p>
+                      <i class="fa fa-quote-right" aria-hidden="true"></i><br>
+                    </div>
+                    <div class="row text-lg-start">
+                      <div class="col-sm-2 pt-4 align-items-center">
+                        <img src="{% static "images/profile3.jpg" %}" class="rounded-circle img-responsive img-fluid">
+                      </div>
+                      <div class="col-sm-10">
+                        <div class="arrow-down d-none d-md-block"></div>
+                        <h4><strong>Hellen Smith</strong></h4>
+                        <p class="testimonial_subtitle"><span>Business Woman</span><br>
+                          <span>Just Eggs</span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Carousel wrapper -->
+      {% comment %} Hero javascripts {% endcomment %}
+      <script src="js/object-fit-videos.js"></script>
+      <script src="js/app.js"></script>
+  </section>
+  
+    {% comment %} <div class="album py-5 bg-light">
+      <div class="py-5 container">
+  
+        <div class="pb-3 h5">All Products</div>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
+  
+          {% for product in products %}
+  
+          <div class="col">
+            <div class="card shadow-sm">
+              <img class="img-fluid" alt="Responsive image" src="{{ product.image.url }}">
+              <div class="card-body">
+                <p class="card-text">
+                  <a class="text-dark text-decoration-none" href="{{ product.get_absolute_url }}">{{ product.title }}</a>
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <small class="text-muted">9min read</small>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          {% endfor %}
+  
+        </div>
+      </div>
+    </div> {% endcomment %}
+  
+  
+</main>
+{% endblock %}
