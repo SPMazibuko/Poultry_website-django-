@@ -96,40 +96,31 @@
     justify-content: "space-between";
 }
 
-#triangle {
-    position: "relative";
-    height: 90px;
-}
-
-#triangle div {
-    background: red;
-    width: 100%;
-    height: 100%;
-    margin: 0 auto 10px;
-    color: #fbfbfc;
-    line-height: 80px;
+  .pyramid {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+    -webkit-clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    margin-left: 280px;
+    margin-top: -120px;
+  }
+  
+  
+  
+  .pyramid__section {
+    flex: 1 1 100%;
+    background-color: rgb(150, 149, 149);
+    margin-bottom: 2px;
     text-align: center;
-    font-size: 0.8em;
+    color: white;
+    font-weight: bold;
   }
   
-  .final__triangle .top {
-    z-index: 1;
+  .pyramid__section:nth-of-type(even) {
+    background-color: rgb(109, 104, 104);
   }
-  
-    .final__triangle:hover div {
-      color: white;
-    }
-  
-  .final__triangle:hover .mid {
-    top: 110px;
-    background: green;
-  }
-  
-  .final__triangle:hover .bottom {
-    top: 220px;
-    background: blue;
-  }
-  
 
 .client {
     width: 100%;
