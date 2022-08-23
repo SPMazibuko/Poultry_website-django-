@@ -85,6 +85,52 @@
     margin-top: -100px;
 }
 
+#quality__text {
+    font-size: 18px;
+}
+
+#quality__img{
+    padding: 10px;
+    display: "-ms-inline-flexbox";
+    align-items: "center";
+    justify-content: "space-between";
+}
+
+#triangle {
+    position: "relative";
+    height: 90px;
+}
+
+#triangle div {
+    background: red;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto 10px;
+    color: #fbfbfc;
+    line-height: 80px;
+    text-align: center;
+    font-size: 0.8em;
+  }
+  
+  .final__triangle .top {
+    z-index: 1;
+  }
+  
+    .final__triangle:hover div {
+      color: white;
+    }
+  
+  .final__triangle:hover .mid {
+    top: 110px;
+    background: green;
+  }
+  
+  .final__triangle:hover .bottom {
+    top: 220px;
+    background: blue;
+  }
+  
+
 .client {
     width: 100%;
     height: 100%;

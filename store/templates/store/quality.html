@@ -4,9 +4,203 @@
 {% block title %}Quality{% endblock %}
 
 {% block content %}
+    <main class="container-fluid">
+        {% comment %} Headings {% endcomment %}
+        <div class="row mt-4 pt-5 align-item-center justify-content-center">
+            <div class="col-4">
+                <h1>Quality</h1>
+                <hr class="bg-dark mt-2 d-inline-block mx-auto" style="width: 400px; height:3px;">
+            </div>
+            <div class="col-6">   
+                <h1>Quality Check in Different Stages</h1>
+                <hr class="bg-dark mt-2 d-inline-block mx-auto" style="width: 660px; height:3px;">
+            </div>
+        </div>
+        
+        <div class="row align-item-center justify-content-center">
+            {% comment %} content for quality {% endcomment %}
+            <div class="col-4">
+                <p class="text-muted" id="quality__text">Our poultry always produce healthy products ,it is important to be familiar with the characteristics of a healthy bird. 
+                    A healthy bird displays traits such as Erect stance with head and tail elevated, bright red comb and wattles 
+                    (except for those breeds with blue combs, such as the silkie), filled-out face parts, bright and alert eyes, clean nostrils,
+                    smooth, neat, clean feathers, filled-out legs, joints that are smooth and cool to the touch, weight that is typical for the 
+                    type and age of the bird, powerful movements when struggling, scales on the legs and feet that are clean and waxy in appearance, 
+                    color of the skin that is characteristics of the breed and strain of bird, as well as the age and state of production,
+                    in addition, a healthy bird eats and drinks frequently and displays no signs of respiratory distress.
+                </p>
+                {% comment %} Grade A content {% endcomment %}
+                <div class="row mt-4">
+                    <div style='margin: auto; text-align: center;' class="col-2 ">
+                        <span class='display-2 text-warning'>A</span>
+                    </div>
+                    <div class="col-10">
+                        <h5>Grade A</h5>
+                        <p class="text-muted">
+                           The farm conforms to the requirements for A quality designated as U.S. Grade A by producing lot of ready-to-cook poultry, 
+                           parts, or poultry food products consisting of one or more ready-to-cook carcasses or parts, or individual units of poultry 
+                           food products of the same kind and class.
+                        </p>
+                    </div>
+                </div>
+                {% comment %} Grade B contents {% endcomment %}
+                <div class="row mt-4">
+                    <div style='margin: auto; text-align: center;' class="col-2 ">
+                        <span class='display-2 text-warning'>B</span>
+                    </div>
+                    <div class="col-10">
+                        <h5>Grade B</h5>
+                        <p class="text-muted">
+                            We produce a lot of ready-to-cook poultry or parts consisting of one or more ready-to-cook carcasses or parts of the same 
+                            kind and class, each of which conforms to the requirements for B quality or better may be designated as Grade B.
+                        </p>
+                    </div>
+                </div>
+                {% comment %} Grade C content {% endcomment %}
+                <div class="row mt-4">
+                    <div style='margin: auto; text-align: center;' class="col-2 ">
+                        <span class='display-2 text-warning'>C</span>
+                    </div>
+                    <div class="col-10">
+                        <h5>Grade C</h5>
+                        <p class="text-muted">
+                            A carcass or part that does not meet the requirements for A or B quality may be of C quality, provided the flesh is 
+                            substantially intact and the carcass or part complies with the conformation of the carcass or part may have abnormal 
+                            deformities that detract from the appearance of the product and affect the normal distribution of flesh, such as 
+                            seriously curved, or crooked breast, seriously crooked back, or misshapen legs and wings. Fleshing - The carcass or 
+                            part may have a poor covering of flesh considering the kind, class, and part.
+                        </p>
+                    </div>
+                </div>
+                <div id="quality__img">
+                    <img class="img-responsive img-fluid" style="width: 300px; height:250px;" src="{% static "images/Chick-info1.png" %}">
+                    <img class="img-responsive img-fluid" style="width: 300px; height:250px;" src="{% static "images/EggInfo1.jpg" %}">
+                </div>
+            </div>
+            {% comment %} Quality Check in Different Stages {% endcomment %}
+            <div class="col-md-6 pl-4">
+                <div class="row py-4">
+                    <div class="col-6">
+                        <div class="row">
+                            <div style='margin: auto; text-align: center;' class="col-2 ">
+                                <span class='display-2 text-warning'>1</span>
+                            </div>
+                            <div class="col-10">
+                                <h5>Conducting a Hazard Analysis</h5>
+                                <p class="text-muted">
+                                    A hazard is any chemical, biological, or physical cause that is likely to cause injuries or illness when not 
+                                    well controlled. This quality control check is important because it helps in developing hazards that may cause 
+                                    illness or harm when not controlled effectively. 
+                                </p>
+                            </div>
+                        </div>    
+                    </div>
+                    <div class="col-6">
+                        <div class="row">
+                            <div style='margin: auto; text-align: center;' class="col-2 ">
+                                <span class='display-2 text-warning'>2</span>
+                            </div>
+                            <div class="col-10">
+                                <h5>Establishing Critical Limits</h5>
+                                <p class="text-muted">
+                                    When developing HACCP quality control checks, the next step involves establishing critical limits for all 
+                                    control points. The critical limits are arguments that help determine whether a control measure of the CCP 
+                                    is out of control.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-<main>
-    <h1>Hello world from Quality page </h1>
-</main>
+                <div class="row py-4">
+                    <div class="col-6">
+                        <div class="row">
+                            <div style='margin: auto; text-align: center;' class="col-2 ">
+                                <span class='display-2 text-warning'>3</span>
+                            </div>
+                            <div class="col-10">
+                                <h5>Establishing Corrective Actions</h5>
+                                <p class="text-muted">
+                                    Corrective action should be determined for each CCP in cases where the CL hasn’t been met. 
+                                    Corrective actions used often depend on the type of process and type of food produced. 
+                                    In case there is any deviation from the CL, corrective action is required to prevent any hazardous 
+                                    food materials from being distributed to consumers.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="row">
+                            <div style='margin: auto; text-align: center;' class="col-2 ">
+                                <span class='display-2 text-warning'>4</span>
+                            </div>
+                            <div class="col-10">
+                                <h5>Verification Procedures</h5>
+                                <p class="text-muted">
+                                    HACCP systems of meat and poultry businesses should be systematically verified. There are 
+                                    four main verification principles used to verify HACCP systems as stated by the NACMCF. 
+                                    The verification process ensures that HACCP plans are implemented as planned. 
+                                    This process also confirms that the critical control points are accurate.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <span class='h1 py-4'>Bio Security Provided</span>
+                    <p class="text-muted">
+                        Biosecurity has multiple meanings and is defined differently according to various disciplines. The original 
+                        definition of biosecurity started out as a set of preventive measures designed to reduce the 
+                        risk of transmission of infectious diseases in crops and livestock, quarantined pests, invasive alien 
+                        species, and living modified organisms (Koblentz, 2010). Biosecurity and farm management will help decrease 
+                        the chance of disease on the farm. The first step to disease prevention is protection from exposure to disease 
+                        agents. Strictly following the biosecurity guidelines below will assist to decrease the chance of disease. 
+                        Poultry diseases are controlled by biosecurity, veterinary health care, complete vaccination programs, high-quality 
+                        diet, enclosed housing, and high standard of farm and bird management. Disease can occur if a flock is challenged 
+                        with a new strain of a virus, bacteria, and parasite or if there is a breach in biosecurity. Biosecurity must 
+                        be practiced at all times. All growers and workers should have documented biosecurity training. 
+                        A biosecurity checklist should be posted or kept on each farm. Biosecurity measures should be audited 
+                        frequently for compliance. The main concepts of commercial poultry production biosecurity are:
+                        <ul class="text-muted" style="padding-left:68px">
+                            <li>Cleaning and Disinfecting</li>
+                            <li>Isolation</li>
+                            <li>Traffic Control</li>
+                            <li>Pest Control</li>
+                            <li>Dead Bird Disposal</li>
+                        </ul>  
+                    </p>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        {% comment %} <div id="pyramid">
+                            <div class="pyramid__section"></div>
+                            <div class="pyramid__section"></div>
+                            <div class="pyramid__section"></div>
+                        </div> {% endcomment %}
+                        <div id="triangle"style="">
+                            <div class="aaa" id="top">top</div>
+                            <div class="aaa" id="mid">mid</div>
+                            <div class="aaa" id="mid1">mid1</div>
+                            <div class="aaa" id="bottom">bottom</div>
+                        </div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+    </main>
 
 {% endblock %}
+
+{% comment %} 
+                        <p  class="text-muted" id="quality__text">
+                    A fresh egg is a perishable food. Immediately after the egg is laid changes in the contents start to occur and a steady decline 
+                    in internal quality begins. Simultaneously, the egg starts to lose weight. The conditions of the albumen are primarily responsible 
+                    for the internal quality assessment. A good quality egg is expected to have a firm and round yolk surrounded by a thick albumen and
+                    distinctly thinner outer albumen when broken out. During storage the thick albumen slowly breaks down resulting in more and more 
+                    thin albumen. This albumen quality is often measured as a function of the height of the inner thick albumen. 
+                    The Haugh unit is a measure of egg quality based on the height of its egg white (albumen). This test we are following was originally 
+                    introduced by Raymond Haugh in 1937 and remains an important industry measure of egg quality next to other measures such as shell
+                    thickness and strength. Haugh units are directly correlated to egg grading criteria. Eggs with Haugh value of 72 or higher are considered 
+                    to be of AA quality.
+    </p>
+</div> {% endcomment %}
