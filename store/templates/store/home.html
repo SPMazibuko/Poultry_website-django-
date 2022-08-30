@@ -16,7 +16,7 @@
               <p class="lead text-white">The best poultry you can find around the world, a happy chicken will always lay 
                 more eggs, the more the eggs the lesser the price. To make an online purchase please create an account below</p>
               <p>
-                <a href="#" class="btn btn btn-warning my-2">Make an account</a>
+                <a href="#" class="btn btn btn-warning my-2 text-dark">Make an account</a>
               </p>
           </div>
         </div>
@@ -221,35 +221,5 @@
       <script src="js/object-fit-videos.js"></script>
       <script src="js/app.js"></script>
   </section>
-  
-    {% comment %} <div class="album py-5 bg-light">
-      <div class="py-5 container">
-  
-        <div class="pb-3 h5">All Products</div>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
-  
-          {% for product in products %}
-  
-          <div class="col">
-            <div class="card shadow-sm">
-              <img class="img-fluid" alt="Responsive image" src="{{ product.image.url }}">
-              <div class="card-body">
-                <p class="card-text">
-                  <a class="text-dark text-decoration-none" href="{{ product.get_absolute_url }}">{{ product.title }}</a>
-                </p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <small class="text-muted">9min read</small>
-                </div>
-              </div>
-            </div>
-          </div>
-  
-          {% endfor %}
-  
-        </div>
-      </div>
-    </div> {% endcomment %}
-  
-  
 </main>
 {% endblock %}

@@ -29,7 +29,6 @@
     font-family: 'object-fit: cover';
 }
 
-
 #hero .texture {
     width: 100%;
     height: 90%;
@@ -96,7 +95,7 @@
     justify-content: "space-between";
 }
 
-  .pyramid {
+.pyramid {
     width: 350px;
     display: flex;
     flex-direction: column;
@@ -106,9 +105,7 @@
     margin-left: 280px;
     margin-top: -120px;
   }
-  
-  
-  
+
   .pyramid__section {
     flex: 1 1 100%;
     background-color: rgb(150, 149, 149);
@@ -140,6 +137,34 @@
     color: #14425f;
     height: auto;
 }
+
+.name {
+    color: orange;
+  }
+  
+  .work {
+    font-weight: bold;
+    font-size: 15px;
+  }
+  
+  .about span {
+    font-size: 13px;
+  }
+  
+  .v-profile {
+    color: orange;
+    cursor: pointer;
+  }
+  
+  .box {
+    -webkit-box-shadow: 13px 12px 5px -10px rgba(196,194,196,0.72);
+    -moz-box-shadow: 13px 12px 5px -10px rgba(196,194,196,0.72);
+    box-shadow: 13px 12px 5px -10px rgba(196,194,196,0.72);
+  }
+  
+  .col-md-3 {
+    margin-top: 10px;
+  }
 
 @media screen and (min-width:768px) {
     #hero .caption h1 {

@@ -19,7 +19,8 @@ def lessons(request):
     return render(request, 'store/lessons.html')
 
 def products(request):
-    return render(request, 'store/products.html')
+    products = Product.objects.all()
+    return render(request, 'store/products.html',{'products': products})
 
 def quality(request):
     return render(request, 'store/quality.html')
