@@ -6,14 +6,65 @@
 {% block content %}
 
 <main>
-      <div class="py-5 container">
-        <div class="pb-3 h5">All Products</div>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
-  
-          {% for product in products %}
-  
+    <div class="py-5 container">
+        <div class="align-item-center justify-content-center pb-3">
+            <div>
+                <h1>Poultry Farm Products</h1>
+                <hr class="bg-dark mt-2 mb-2 d-inline-block mx-auto" style="width: 100%; height:3px;">
+            </div>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3 m-2 align-item-center justify-content-center">
+            <div class="card m-3" style="width: 18rem;background:grey;">
+                <img class="card-img-fluid" src="{% static "images/chicken1.jpg" %}" alt="Chickens" style="height:190px"/>
+                <div class="card-body">
+                  <h5 class="card-title text-white"><stong>Chickens</strong></h5>
+                  <p class="card-text text-white">we have a decent chicken catalog you can choose from please click next to check the catalog and buy online</p>
+                  <a href="#" class="btn btn-warning">Go To Chickens</a>
+                </div>
+            </div>
+            <div class="card m-3" style="width: 18rem;background:grey;margin-left">
+                <img class="card-img-fluid" src="{% static "images/two_chicks.jpg" %}" alt="Chickens" style="height:190px"/>
+                <div class="card-body">
+                  <h5 class="card-title text-white"><stong>Chicks</strong></h5>
+                  <p class="card-text text-white">If you are looking to start a poultry bussiness or want to grow your own poultry we got you covered with chicks.</p>
+                  <a href="#" class="btn btn-warning">Go To Chicks</a>
+                </div>
+            </div>
+            <div class="card m-3" style="width: 18rem;background:grey;">
+                <img class="card-img-fluid" src="{% static "images/eggs_one.jpg" %}" alt="Chickens" style="height:190px"/>
+                <div class="card-body">
+                  <h5 class="card-title text-white"><stong>Eggs</strong></h5>
+                  <p class="card-text text-white">We have eggs both for hatching and for nutritious fullfilling eating freshly laid everyday. you choose from chickens, ducks and more.</p>
+                  <a href="#" class="btn btn-warning">Go To Eggs</a>
+                </div>
+              </div>
+              <div class="card m-3" style="width: 18rem;background:grey;">
+                <img class="card-img-fluid" src="{% static "images/ducks.jpg" %}" alt="Chickens" style="height:190px"/>
+                <div class="card-body">
+                  <h5 class="card-title text-white"><stong>Ducks</strong></h5>
+                  <p class="card-text text-white">we have a decent Ducks catalog you can choose from please click next to check the catalog and buy online</p>
+                  <a href="#" class="btn btn-warning">Go To Ducks</a>
+                </div>
+              </div>
+              <div class="card m-3" style="width: 18rem;background:grey;">
+                <img class="card-img-fluid" src="{% static "images/pieces.jpg" %}" alt="Chickens" style="height:190px"/>
+                <div class="card-body">
+                  <h5 class="card-title text-white"><stong>Freshly Cut Pieces</strong></h5>
+                  <p class="card-text text-white">If you looking for freshly cut chicken or duck pieces we got your back, you can get also get them as mixed portions</p>
+                  <a href="#" class="btn btn-warning">Go To Pieces</a>
+                </div>
+              </div>
+              {% comment %} Equipment {% endcomment %}
+              <div class="card m-3" style="width: 18rem;background:grey;">
+                <img class="card-img-fluid" src="{% static "images/equip.jfif" %}" alt="Chickens" style="height:190px"/>
+                <div class="card-body">
+                  <h5 class="card-title text-white"><stong>Poultry Equipment</strong></h5>
+                  <p class="card-text text-white">New in our catalog is the poultry farming equipment specialy added for upcoming farmers, we also offer training into using the equipment.</p>
+                  <a href="#" class="btn btn-warning">Go To Equipments</a>
+                </div>
+              </div>
+          {% comment %} {% for product in products %}
           <div class="col">
-            <div class="card shadow-sm">
+            <div class="card shadow-sm" style="background: grey;width: 18rem;">
               <img class="img-fluid" alt="Responsive image" src="{{ product.image.url }}">
               <div class="card-body">
                 <p class="card-text">
@@ -24,10 +75,10 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> 
   
           {% endfor %}
-  
+  {% endcomment %}
         </div>
       </div>
     </div> 

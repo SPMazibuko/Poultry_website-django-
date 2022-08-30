@@ -5,8 +5,75 @@
 
 {% block content %}
 
-<main>
-    <h1>Hello world from Contacts page </h1>
+<main class="container-fluid">
+    {% comment %} Headings {% endcomment %}
+    <div class="row mt-4 pt-5 align-item-center justify-content-center">
+        <div class="col-4">
+            <h1>Find Us</h1>
+            <hr class="bg-dark mt-2 d-inline-block mx-auto" style="width: 400px; height:3px;">
+        </div>
+        <div class="col-6">   
+            <h1>Get In Touch</h1>
+            <hr class="bg-dark mt-2 d-inline-block mx-auto" style="width: 660px; height:3px;">
+        </div>
+    </div>
+    
+    <div class="row align-item-center justify-content-center">
+        {% comment %} content for quality {% endcomment %}
+        <div class="col-4" style="margin-top:10%">
+            <p class="text-muted" id="quality__text">
+                156 Troyee street, Sunnyside, Pretoria 0001<br>
+                Telephone: (012) 456 4569<br>
+                alternative: 081 379 7973<br>
+                Email: <a href="#">spmazibuko07@gmail.com</a>
+            </p>
+        </div>
+        {% comment %} Quality Check in Different Stages {% endcomment %}
+        <div class="col-md-6 pl-4">
+            <div class="row">
+                <p class="text-muted">
+                    We are available from 08:00 AM during working days until 17:00 PM, and on Saturdays and Holidays we are 
+                    available from 09:00 AM to 14:00 PM feel free to contact us on our telephone number or send us a whatsapp on 
+                    <span style="color:orange;">073 682 5516</span> we try to get back to you as humanly as possible. 
+                    you can also send us a message on a form below:
+                </p>
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="py-3">
+                            <div class="mb-3 row" style="background:rgb(105,105,105);">
+                                <label for="name" class="col-sm-2 col-form-label text-white"><strong>Name:</strong></label>
+                                <div class="col-sm-10" style="padding:2px">
+                                    <input type="text" class="form-control" id="name">
+                                </div>
+                            </div>
+                            <div class="mb-3 row" style="background:rgb(105,105,105);">
+                                <label for="email" class="col-sm-2 col-form-label text-white"><strong>Email:</strong></label>
+                                <div class="col-sm-10" style="padding:2px">
+                                    <input type="email" class="form-control" id="email">
+                                </div>
+                            </div>
+                            <div class="mb-3 row" style="background:rgb(105,105,105);">
+                                <label for="phoneNum" class="col-sm-2 col-form-label text-white"><strong>Phone:</strong></label>
+                                <div class="col-sm-10" style="padding:2px">
+                                    <input type="tel" class="form-control" id="phoneNum">
+                                </div>
+                            </div>
+                            <div class="mb-3 row" style="background:rgb(105,105,105);">
+                                <label for="message" class="col-sm-2 col-form-label text-white"><strong>Message:</strong></label>
+                                <div class="col-sm-10" style="padding:2px">
+                                    <textarea class="form-control" id="message" rows="6"></textarea>
+                                </div>
+                            </div>
+                            <div style="margin-left: 67%;">
+                                <button type="submit" class="btn btn-warning text-white"><strong>Clear</strong></button>
+                                <button type="submit" class="btn btn-warning text-white"><strong>Submit</strong></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
 
 {% endblock %}
