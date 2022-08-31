@@ -19,9 +19,17 @@ def lessons(request):
     return render(request, 'store/lessons.html')
 
 def products(request):
-    products = Product.objects.all()
-    return render(request, 'store/products.html',{'products': products})
+    return render(request, 'store/products.html')
 
 def quality(request):
     return render(request, 'store/quality.html')
 
+def eggs(request):
+    products = Product.objects.all()
+    return render(request, 'store/eggs.html',{'products': products})
+
+def login(request):
+    return render(request, 'store/login.html')
+
+def logout(request):
+    pass 
