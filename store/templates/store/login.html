@@ -1,28 +1,40 @@
 <!DOCTYPE html>
 {% extends "./base.html" %}
 {% load static %}
-{% block title %}Eggs Category{% endblock %}
+{% block title %}Login{% endblock %}
 
 {% block content %}
 
 <main>
-    <div class="container mt-5">
+    <div class="container my-5">
         <div class="row d-flex justify-content-center">
             <div class="col-md-6">
-                <div class="card px-5 py-5" id="form1">
-                    <div class="form-data" v-if="!submitted">
-                        <div class="forms-inputs mb-4"> <span>Email or username</span> <input autocomplete="off" type="text" v-model="email" v-bind:class="{'form-control':true, 'is-invalid' : !validEmail(email) && emailBlured}" v-on:blur="emailBlured = true">
-                            <div class="invalid-feedback">A valid email is required!</div>
+                <form class="card px-5 py-5" id="form1" action="{% url 'store:login'%}" method="POST">
+                    {% csrf_token %}
+                    <h1 class="justify-content-center align-text-center mb-4" style="margin-left:20%">Welcome Back</h1>
+                    {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                        <li {% if message.tags %} class="{{message.tags}}" {% endif %} style="list-style-type:none !important; color:red;">
+                            {{message}}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    {%endif%}
+                    <div class="form-data">
+                        <div class="forms-inputs mb-4"> <span style="font-weight:bold;">Username</span> 
+                            <input autocomplete="off" type="text" name="email">
                         </div>
-                        <div class="forms-inputs mb-4"> <span>Password</span> <input autocomplete="off" type="password" v-model="password" v-bind:class="{'form-control':true, 'is-invalid' : !validPassword(password) && passwordBlured}" v-on:blur="passwordBlured = true">
-                            <div class="invalid-feedback">Password must be 8 character!</div>
+                        <div class="forms-inputs mb-4"> <span style="font-weight:bold;">Password</span> 
+                            <input autocomplete="off" type="password" name="password">
                         </div>
-                        <div class="mb-3"> <button v-on:click.stop.prevent="submit" class="btn btn-dark w-100">Login</button> </div>
+                        <div class="mb-3"> <input type="submit" value="Register" class="btn-warning btn heading-3 mt-2 w-100"></div>
+                        <a href="{% url 'password_reset'%}">Forgot password?</a>
                     </div>
-                    <div class="success-data" v-else>
-                        <div class="text-center d-flex flex-column"> <i class='bx bxs-badge-check'></i> <span class="text-center fs-1">You have been logged in <br> Successfully</span> </div>
+                    <div class="success-data">
+                        <div class="text-center d-flex flex-column"><span class="text-center">Don't have an account?<a href="/signup">Register Here</a></span> </div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>

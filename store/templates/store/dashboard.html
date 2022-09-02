@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+{% extends "./base.html" %}
+{% load static %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<body>
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar -->
+        <div class="bg-white" id="sidebar-wrapper">
+            <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">
+                Dolly & Sabbi
+            </div>
+            <div class="list-group list-group-flush my-3">
+                  <span class="fs-5 fw-bold px-4"> Dashboard </span>
+                <a href="{% url 'store:add-category' %}" class="list-group-item list-group-item-action bg-transparent second-text">
+                    <span class="px-4">Category </span>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text">
+                    <span class="px-4">Product </span>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text">
+                    <span class="px-4">Store Details </span>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text">
+                    <span class="px-4">Contact Info </span>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text">
+                    <span class="px-4">Legal Info </span>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text">
+                    <span class="px-4">Reply Mails </span>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                    <span class="fs-5 fw-bold px-2">Orders</span>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold">
+                    <i class="bi bi-power"></i></i>Logout</a>
+            </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
+                <div class="d-flex align-items-center">
+                    <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
+                    <h2 class="fs-2 m-0">Dashboard</h2>
+                </div>
+            </nav>
+
+            <div class="container-fluid px-4">
+                <div class="row g-3 my-2">
+                    <div class="col-md-3">
+                        <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+                            <div>
+                                <h3 class="fs-2">720</h3>
+                                <p class="fs-5">Products</p>
+                            </div>
+                            <i class="bi bi-gift fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+                            <div>
+                                <h3 class="fs-2">4920</h3>
+                                <p class="fs-5">Sales</p>
+                            </div>
+                            <i class="bi bi-handbag fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+                            <div>
+                                <h3 class="fs-2">3899</h3>
+                                <p class="fs-5">Delivery</p>
+                            </div>
+                            <i class="bi bi-truck fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+                            <div>
+                                <h3 class="fs-2">10</h3>
+                                <p class="fs-5">Categories</p>
+                            </div>
+                            <i class="bi bi-signpost-2-fill fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row my-5">
+                    <h3 class="fs-4 mb-3">Recent Orders</h3>
+                    <div class="col">
+                        <table class="table bg-white rounded shadow-sm  table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col" width="50">#</th>
+                                    <th scope="col">Product</th>
+                                    <th scope="col">Customer</th>
+                                    <th scope="col">Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Eggs</td>
+                                    <td>Jonny</td>
+                                    <td>R60</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Chicken</td>
+                                    <td>Kenny</td>
+                                    <td>R70</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Chicks</td>
+                                    <td>Jenny</td>
+                                    <td>R200</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td>Drinkers</td>
+                                    <td>Killy</td>
+                                    <td>R700</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        var el = document.getElementById("wrapper");
+        var toggleButton = document.getElementById("menu-toggle");
+
+        toggleButton.onclick = function () {
+            el.classList.toggle("toggled");
+        };
+    </script>
+</body>
+{% endblock %}

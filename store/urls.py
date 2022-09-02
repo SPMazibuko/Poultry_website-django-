@@ -13,5 +13,12 @@ urlpatterns = [
     path('products', views.products, name='products'),
     path('quality', views.quality, name='quality'),
     path('eggs', views.eggs, name='eggs'),
-    path('login', views.login, name='login'),
+    path('login', views.SigninView.as_view(), name='login'),
+    path('signup', views.SignupView.as_view(), name='signup'),
+    path('cust-account', views.AccountView.as_view(), name='cust-account'),
+    path('signout', views.signoutview, name='signout'),
+    path('dashboard', views.dashboard, name='dashboard'),
+
+    #add item
+    path('add-category',views.AddCategory.as_view(), name='add-category'),
 ]

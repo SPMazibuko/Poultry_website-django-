@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+{% extends "./base.html" %}
+{% load static %}
+{% block title %}Register{% endblock %}
+
+{% block content %}
+    <main class="container py-5">
+        <form action="#" name="myForm" method="POST" onsubmit="return(validate());" action="{% url 'store:signup'%}">
+            {% csrf_token %}
+            <div class="container">
+                <div class="row">
+                    <div class="well center-block">
+                        <div class="well-header">
+                            <h3 class="text-center text-success"> Register Here! </h3>
+                            <hr>
+                            {% if messages %}
+                            <ul class="messages">
+                                {% for message in messages %}
+                                <li {% if message.tags %} class="{{message.tags}}" {% endif %} style="list-style-type:none !important;">
+                                    {{message}}
+                                </li>
+                                {% endfor %}
+                            </ul>
+                            {%endif%}
+                        </div>
+        
+                        <div class="row py-2">
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <i class="bi bi-person-plus-fill" style="font-size:30px; padding:5px"></i>
+                                        </div>
+                                        {% comment %} <input type="text" placeholder="Name" name="name" class="form-control" id="sign-name" required> {% endcomment %}
+                                        {{user_creation_form.first_name}}
+                                        {{user_creation_form.first_name.errors}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <i class="bi bi-gender-ambiguous" style="font-size:30px; padding:5px"></i>
+                                        </div>
+                                        {{appuserform.gender}}
+                                        {{appuserform.gender.errors}}
+                                        {% comment %} <select class="form-select form-select-sm" id="" required aria-label=".form-select-sm example">
+                                            <option selected>Gender</option>
+                                            <option value="M">Male</option>
+                                            <option value="F">Female</option>
+                                            <option value="O">Other</option>
+                                        </select> {% endcomment %}
+                                    </div>
+                                </div>
+                            </div>    
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                           <i class="bi bi-telephone-fill" style="font-size:30px; padding:5px"></i>
+                                        </div>
+                                        {{appuserform.mobile}}
+                                        {{appuserform.mobile.errors}}
+                                        {% comment %} <input type="number" minlength="10" maxlength="12" class="form-control" name="txtmobile" placeholder="Mobile No."> {% endcomment %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <i class="bi bi-envelope-fill" style="font-size:30px; padding:5px"></i>
+                                        </div>
+                                        {{user_creation_form.email}}
+                                        {{user_creation_form.email.errors}}
+                                        {% comment %} <input type="text" class="form-control" name="txtmail" placeholder="Email"> {% endcomment %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row py-2">
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <i class="bi bi-lock-fill" style="font-size:30px; padding:5px"></i>
+                                        </div>
+                                        {{user_creation_form.password1}}
+                                        {{user_creation_form.password1.errors}}
+                                        {% comment %} <input type="password" minlength="8" maxlength="20" placeholder="Password" name="txtpass" class="form-control"> {% endcomment %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <i class="bi bi-lock-fill" style="font-size:30px; padding:5px"></i>
+                                        </div>
+                                        {{user_creation_form.password2}}
+                                        {{user_creation_form.password2.errors}}
+                                        {% comment %} <input type="password" minlength="8" maxlength="20" placeholder="Password" name="txtpass" class="form-control"> {% endcomment %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-xs-12 col-sm-12">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="bi bi-person-lines-fill" style="font-size:30px; padding:5px"></i>
+                                    </div>
+                                    {{appuserform.address}}
+                                    {{appuserform.address.error}}
+                                    {% comment %} <textarea class="form-control" name="txtadd" placeholder="Address"></textarea> {% endcomment %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row py-2">    
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <i class="bi bi-person-lines-fill" style="font-size:30px; padding:5px"></i>
+                                        </div>
+                                        {{appuserform.city}}
+                                        {{appuserform.city.error}}
+                                        {% comment %} <textarea class="form-control" name="txtadd" placeholder="Address"></textarea> {% endcomment %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <i class="bi bi-lock-fill" style="font-size:30px; padding:5px"></i>
+                                        </div>
+                                        {{appuserform.pincode}}
+                                        {{appuserform.pincode.errors}}
+                                        {% comment %} <input type="password" minlength="8" maxlength="20" placeholder="Password" name="txtpass" class="form-control"> {% endcomment %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row widget">
+                            <div class="col-md-6 col-xs-6 col-sm-6" style="margin-left: 67%;">
+                                <input type="submit" value="Register" class="btn-warning btn heading-3 mt-4">
+                            </div>
+                        </div>
+                        <div class="success-data">
+                            <div class="text-center d-flex flex-column"><span class="text-center">Already have an account?<a href="/login">Login Here</a></span> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        
+        </form>
+    </main>
+{% endblock %}

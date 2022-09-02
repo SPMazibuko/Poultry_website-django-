@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% extends "./base.html" %}
+{% load static %}
+{% block title %}Customer Account{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div>
+            <h1>My Account</h1>
+            <hr class="bg-dark mt-2 mb-2 d-inline-block mx-auto" style="width: 100%; height:3px;">
+        </div>
+        <section class="content-box p-3">
+            <h2>Welcome, {{request.user.first_name}}</h2>
+            <div>
+                <h3 class="mt-3" style="margin-left:40%">Account Summary</h3>
+                <hr>
+                <div class="row">
+                    <div col-md-6>
+                        <table class="">
+                            <tr>
+                                <th>Name: </th>
+                                <th>Email: </th>
+                                <th>Phone: </th>
+                                <th>Gender: </th>
+                                <th>Address: </th>
+                                <th>City: </th>
+                                <th>Post_Code: </th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}

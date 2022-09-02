@@ -5,7 +5,9 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('', include('store.urls', namespace='sore')),
+    path('', include('store.urls', namespace='store')),
+
+    path('', include('django.contrib.auth.urls')),
 ]
 
 if settings.DEBUG:
