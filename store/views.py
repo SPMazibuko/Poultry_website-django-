@@ -10,7 +10,9 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import *
 from django.views.generic import View, CreateView
-
+from django.urls import reverse_lazy
+from django.contrib.messages.views import SuccessMessageMixin
+from django.core.paginator import Paginator
 
 class AccountView(LoginRequiredMixin,generic.View):
     login_url = '/user/login'
@@ -31,8 +33,8 @@ def about(request):
 def contacts(request):
     return render(request, 'store/contacts.html')
 
-def equipment(request):
-    return render(request, 'store/equipment.html')
+# def equipment(request):
+#     return render(request, 'store/equipment.html')
 
 def lessons(request):
     return render(request, 'store/lessons.html')
@@ -127,7 +129,86 @@ class ProductView(View):
         return render(self.request, 'store/products.html')
 
 #add views
-class AddCategory(CreateView):
-    model = Category_one
+class AddCategory(SuccessMessageMixin,CreateView):
+    model = Category
     fields = ('__all__')
     template_name = 'store/add-category.html'
+    success_message = "Category was added successfully"
+
+    def get_success_url(self, *args, **kwargs):
+        return reverse_lazy('store:add-category')
+
+class AddProduct(SuccessMessageMixin,CreateView):
+    model = Product
+    fields = ('__all__')
+    template_name = 'store/add-product.html'
+    success_message = "Product was added successfully"
+
+    def get_success_url(self, *args, **kwargs):
+        return reverse_lazy('store:add-product')
+
+class ChickensView(View):
+    def get(self, *args, **kwargs):
+        products = Product.objects.filter(category="Chickens")
+        paginator = Paginator(products,6)
+        page_number = self.request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
+        context={
+            'page_obj':page_obj,
+        }
+        return render(self.request, 'store/chickens.html', context)
+
+class ChicksView(View):
+    def get(self, *args, **kwargs):
+        products = Product.objects.filter(category="Chicks")
+        paginator = Paginator(products,6)
+        page_number = self.request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
+        context={
+            'page_obj':page_obj,
+        }
+        return render(self.request, 'store/chicks.html', context)
+
+class EggsView(View):
+    def get(self, *args, **kwargs):
+        products = Product.objects.filter(category="Eggs")
+        paginator = Paginator(products,6)
+        page_number = self.request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
+        context={
+            'page_obj':page_obj,
+        }
+        return render(self.request, 'store/eggs.html', context)
+
+class DucksView(View):
+    def get(self, *args, **kwargs):
+        products = Product.objects.filter(category="Ducks")
+        paginator = Paginator(products,6)
+        page_number = self.request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
+        context={
+            'page_obj':page_obj,
+        }
+        return render(self.request, 'store/ducks.html', context)
+
+class PiecesView(View):
+    def get(self, *args, **kwargs):
+        products = Product.objects.filter(category="Peices")
+        paginator = Paginator(products,6)
+        page_number = self.request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
+        context={
+            'page_obj':page_obj,
+        }
+        return render(self.request, 'store/pieces.html', context)
+
+class EquipmentView(View):
+    def get(self, *args, **kwargs):
+        products = Product.objects.filter(category="Equipment")
+        paginator = Paginator(products,6)
+        page_number = self.request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
+        context={
+            'page_obj':page_obj,
+        }
+        return render(self.request, 'store/equipment.html', context)

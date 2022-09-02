@@ -16,4 +16,6 @@ class ProductAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
 
 admin.site.register(Appuser)
-admin.site.register(Category_one)
+admin.site.register(SubCategory)
+admin.site.register(Size)
+admin.site.register(Animal)

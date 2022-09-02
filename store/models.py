@@ -1,6 +1,4 @@
-from distutils.command.upload import upload
 import os
-from pyexpat import model
 from tabnanny import verbose
 from unicodedata import category
 from django.db import models
@@ -35,25 +33,46 @@ def category_image(instance, filename):
         filename = '{}_image.{}'.format(instance.name,ext)
     return os.path.join(upload_to, filename)
 
-
-class Category_one(models.Model):
-    name = models.CharField(max_length=100, unique=True)
-    image = models.ImageField(upload_to=category_image)
-
-    def __str__(self):
-        return self.name
-
-
 class Category(models.Model):
     name = models.CharField(max_length=255, db_index=True)
     slug = models.SlugField(max_length=255, unique=True)
+    discription= models.TextField(blank=True)
+    image = models.ImageField(upload_to=category_image)
 
     class Meta:
         verbose_name_plural = 'categories'
 
     def __str__(self):
         return self.name
-    
+
+def subcategory_image(instance, filename):
+    upload_to = '{}_files/'.format(instance.category.name,instance.name)
+    ext = filename.split('.')[-1]
+
+    if instance.name:
+        filename = '{}_image.{}'.format(instance.name,ext)
+    return os.path.join(upload_to, filename)
+
+class SubCategory(models.Model):
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
+    image = models.ImageField(upload_to=subcategory_image, null=True, blank=True)
+
+    def __str__(self):
+        return str(self.category.name)+ '-' + str(self.name)
+
+class Animal(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+class Size(models.Model):
+    subCategory = models.ForeignKey(SubCategory, on_delete=models.CASCADE, related_name='subcategorySizes')
+    size = models.CharField(max_length=100)
+
+    def __str__(self):
+        return str(self.subCategory.name) + '-' + str(self.size)
 
 class Product(models.Model):
     category = models.ForeignKey(Category, related_name='product', on_delete=models.CASCADE)
@@ -68,11 +87,11 @@ class Product(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
-    
     class Meta:
         verbose_name_plural = 'Products'
         ordering = ('-created',)
 
     def __str__(self):
         return self.title
+
     
