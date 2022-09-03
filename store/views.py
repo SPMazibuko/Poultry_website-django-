@@ -1,5 +1,5 @@
 from multiprocessing import context
-from django.shortcuts import render, reverse
+from django.shortcuts import render, reverse, get_object_or_404
 from django.http import HttpResponseRedirect
 from store.forms import AppUserForm, CreateUserForm
 from .models import Category, Product
@@ -21,7 +21,7 @@ class AccountView(LoginRequiredMixin,generic.View):
         return render(self.request, 'store/cust-account.html')
 
 def all_products(request):
-    products = Product.objects.all()
+    products = Product.products.all()
     return render(request, 'store/home.html', {'products': products})
 
 def dashboard(request):
@@ -34,7 +34,7 @@ def contacts(request):
     return render(request, 'store/contacts.html')
 
 # def equipment(request):
-#     return render(request, 'store/equipment.html')
+# return render(request, 'store/equipment.html')
 
 def lessons(request):
     return render(request, 'store/lessons.html')
@@ -149,7 +149,7 @@ class AddProduct(SuccessMessageMixin,CreateView):
 
 class ChickensView(View):
     def get(self, *args, **kwargs):
-        products = Product.objects.filter(category="Chickens")
+        products = Product.objects.filter(slug="Chickens")
         paginator = Paginator(products,6)
         page_number = self.request.GET.get('page')
         page_obj = paginator.get_page(page_number)
@@ -160,7 +160,7 @@ class ChickensView(View):
 
 class ChicksView(View):
     def get(self, *args, **kwargs):
-        products = Product.objects.filter(category="Chicks")
+        products = Product.objects.filter(slug="Chicks")
         paginator = Paginator(products,6)
         page_number = self.request.GET.get('page')
         page_obj = paginator.get_page(page_number)
@@ -171,7 +171,7 @@ class ChicksView(View):
 
 class EggsView(View):
     def get(self, *args, **kwargs):
-        products = Product.objects.filter(category="Eggs")
+        products = Product.objects.filter(slug="Eggs")
         paginator = Paginator(products,6)
         page_number = self.request.GET.get('page')
         page_obj = paginator.get_page(page_number)
@@ -182,7 +182,7 @@ class EggsView(View):
 
 class DucksView(View):
     def get(self, *args, **kwargs):
-        products = Product.objects.filter(category="Ducks")
+        products = Product.objects.filter(slug="Ducks")
         paginator = Paginator(products,6)
         page_number = self.request.GET.get('page')
         page_obj = paginator.get_page(page_number)
@@ -193,7 +193,7 @@ class DucksView(View):
 
 class PiecesView(View):
     def get(self, *args, **kwargs):
-        products = Product.objects.filter(category="Peices")
+        products = Product.objects.filter(slug="Peices")
         paginator = Paginator(products,6)
         page_number = self.request.GET.get('page')
         page_obj = paginator.get_page(page_number)
@@ -204,7 +204,7 @@ class PiecesView(View):
 
 class EquipmentView(View):
     def get(self, *args, **kwargs):
-        products = Product.objects.filter(category="Equipment")
+        products = Product.objects.filter(slug="Equipment")
         paginator = Paginator(products,6)
         page_number = self.request.GET.get('page')
         page_obj = paginator.get_page(page_number)
@@ -212,3 +212,19 @@ class EquipmentView(View):
             'page_obj':page_obj,
         }
         return render(self.request, 'store/equipment.html', context)
+
+#####################################################################################################
+def categories(request):
+    return {
+        'categories': Category.objects.all()
+    }
+
+def category_list(request, category_slug=None):
+    category = get_object_or_404(Category, slug=category_slug)
+    products = Product.objects.filter(category=category)
+    return render(request, 'store/products/category.html', {'category': category, 'products': products})
+
+
+def product_detail(request, slug):
+    product = get_object_or_404(Product, slug=slug, in_stock=True)
+    return render(request, 'store/products/detail.html', {'product': product})
