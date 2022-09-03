@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald:700|PT+Sans&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
   </head>
@@ -21,7 +22,7 @@
     <header header class="p-3 mb-3 border-bottom" style="background-color: #06283D;">
       <nav class="navbar navbar-dark navbar-expand-md border-bottom d-flex p-2 d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <div class="container-fluid">
-          <a class="navbar-brand text-white d-flex align-items-center mb-2 mb-lg-0 text-decoration-none" href="#">Happy Chickens</a>
+          <a class="navbar-brand text-white d-flex align-items-center mb-2 mb-lg-0 text-decoration-none" href="/">Happy Chickens</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon text-white"></span>
           </button>
@@ -75,7 +76,24 @@
                 {% endif %}
               </ul>
             </div>
+            <a type="button" role="button" href="{% url "basket:basket_summary" %}" class="btn btn-outline-secondary">
+                        {% with total_qty=basket|length %}
+                            <div id="basket-qty" class="d-inline-flex">
+                                {% if total_qty > 0 %}
+                                    {{ total_qty }}
+                                {% else %}
+                                    0
+                                {% endif %}
+                            </div>
+                        {% endwith %} 
 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-cart3" viewBox="0 0 16 16">
+                            <path
+                                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                        </svg>
+                        Basket
+                    </a>
             <i class="bi bi-basket3 text-white" style="font-size:25px"><span class="badge text-bg-secondary">0</span></i>
             {% comment %} <div class="dropdown text-end">
               <button class="btn btn-secondary dropdown-toggle my-2 text-white mx-2" type="button">

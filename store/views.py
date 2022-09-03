@@ -14,6 +14,10 @@ from django.urls import reverse_lazy
 from django.contrib.messages.views import SuccessMessageMixin
 from django.core.paginator import Paginator
 
+
+def home(request):
+    return render(request, 'store/home.html')
+
 class AccountView(LoginRequiredMixin,generic.View):
     login_url = '/user/login'
     redirect_field_name = 'user/cust-account/'
@@ -22,7 +26,8 @@ class AccountView(LoginRequiredMixin,generic.View):
 
 def all_products(request):
     products = Product.products.all()
-    return render(request, 'store/home.html', {'products': products})
+    return render(request, 'store/products.html', {'products': products})
+
 
 def dashboard(request):
     return render(request, 'store/dashboard.html')
@@ -40,7 +45,8 @@ def lessons(request):
     return render(request, 'store/lessons.html')
 
 def products(request):
-    return render(request, 'store/products.html')
+    products = Product.products.all()
+    return render(request, 'store/products.html', {'store': products})
 
 def quality(request):
     return render(request, 'store/quality.html')
@@ -122,10 +128,6 @@ def signoutview(request):
 class CategoryView(View):
     def get(self, *args, **kwargs):
         context={'i':range(0,16)}
-        return render(self.request, 'store/products.html')
-
-class ProductView(View):
-    def get(self, *args, **kwargs):
         return render(self.request, 'store/products.html')
 
 #add views
