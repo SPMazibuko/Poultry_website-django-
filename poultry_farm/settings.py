@@ -16,7 +16,7 @@ SECRET_KEY = "django-insecure-k3slyt4525p4(v9x^&l@&i#6w$piy1cpxj6r_bw52ausj0hd1-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['yourdomain.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -32,6 +32,8 @@ INSTALLED_APPS = [
     'crispy_forms',
     'basket',
     'account',
+    'payment',
+    'orders',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -125,3 +127,12 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 AUTH_USER_MODEL = 'account.UserBase'
 LOGIN_REDIRECT_URL = '/account/dashboard'
 LOGIN_URL = '/account/login/'
+
+# Basket session ID
+BASKET_SESSION_ID = 'basket'
+
+# Stripe Payment
+PUBLISHABLE_KEY = 'pk_test_51JcngIJLVmtck2M44vDiEVzcN0mUMkq0m3AOHrgryOn1OmCrxO2kiF5OfIJgMhtkfHPBQk37Yweruq29JdyzRzoZ00og1gQNBZ'
+SECRET_KEY = 'sk_test_51JcngIJLVmtck2M4XXJj4d3Y17w28AV53W56AktyTDtjRVVw9RiDt7JGP6oS7z0vW7qxC2KrpNkQFK8Pwjq5s3oh00LQ9bFWji'
+STRIPE_ENDPOINT_SECRET = 'whsec_1fd03233222a7307b43c97edb4c1bc0af677cd210b715b3a96d1a28f1523fe57'
+# stripe listen --forward-to localhost:8000/payment/webhook/
