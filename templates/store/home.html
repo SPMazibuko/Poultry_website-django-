@@ -16,7 +16,7 @@
               <p class="lead text-white">The best poultry you can find around the world, a happy chicken will always lay 
                 more eggs, the more the eggs the lesser the price. To make an online purchase please create an account below</p>
               <p>
-                <a href="/login" class="btn btn btn-warning my-2 text-dark">Make an account</a>
+                <a href="{% url 'account:register'%}" class="btn btn btn-warning my-2 text-dark">Make an account</a>
               </p>
           </div>
         </div>
@@ -42,7 +42,7 @@
         <div class="row g-4 row-cols-1 row-cols-lg-2">
           <div class="col d-flex align-items-start">
             <div>
-              <h2>Popular Services</h2>
+              <h2>Popular Products</h2>
                 <p>
                   <ul style="color: #f5ba17;">
                     <li>Chickens</li>
@@ -53,7 +53,7 @@
                     <li>.</li>
                   </ul>
                 </p>
-                <a href="#" class="btn btn btn-warning">
+                <a href="/products" class="btn btn btn-warning">
                   read more..
                 </a>
               </div>

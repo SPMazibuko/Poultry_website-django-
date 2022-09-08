@@ -19,16 +19,7 @@ urlpatterns = [
         #add item
     path('add-category',views.AddCategory.as_view(), name='add-category'),
     path('add-product',views.AddProduct.as_view(), name='add-product'),
-    # path('login', views.SigninView.as_view(), name='login'),
-    # path('signup', views.SignupView.as_view(), name='signup'),
-    # path('cust-account', views.AccountView.as_view(), name='cust-account'),
-    # path('signout', views.signoutview, name='signout'),
-    # path('chickens',views.ChickensView.as_view(), name='chickens'),
-    # path('chicks',views.ChicksView.as_view(), name='chicks'),
-    # path('eggs',views.EggsView.as_view(), name='eggs'),
-    # path('ducks',views.DucksView.as_view(), name='ducks'),
-    # path('pieces',views.PiecesView.as_view(), name='pieaces'),
-    # path('equipments',views.PiecesView.as_view(), name='equipments'),
+    
 ]
 # to save media files during development
 from django.conf import settings

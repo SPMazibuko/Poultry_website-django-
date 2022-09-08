@@ -4,9 +4,12 @@
   <head>
     <meta charset="utf-8" />
     <title>{% block title %} Farm {% endblock %}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    {% comment %} Meta for creating responsivenes {% endcomment %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% comment %} custom stylesheet css {% endcomment %}
     <link href="{% static "styles/style.css"%}" rel="stylesheet">
     <link href="{% static "styles/dashboard_style.css"%}" rel="stylesheet">
+    {% comment %} Bootstrap link and icon links plus scripts {% endcomment %}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon.ico">
@@ -19,14 +22,16 @@
   </head>
 
   <body>
-    <header header class="p-3 mb-3 border-bottom" style="background-color: #06283D;">
+    <header header class="pb-2 mb-3 border-bottom" style="background-color: #06283D;">
       <nav class="navbar navbar-dark navbar-expand-md border-bottom d-flex p-2 d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <div class="container-fluid">
-          <a class="navbar-brand text-white d-flex align-items-center mb-2 mb-lg-0 text-decoration-none" href="/">Happy Chickens</a>
+          <a class="navbar-brand text-white d-flex align-items-center mb-2 mb-lg-0 text-decoration-none" href="/"><img class="img-responsive img-fluid" style="width: 150px; height:110px;" src="{% static "images/logo.png" %}"></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon text-white"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
+
+          
+          <div class="collapse navbar-collapse" id="navbarCollapse" style="font-size:20px;">
             <ul class="mb-md-0 nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center">
               <li class="nav-item active">
                 <a class="nav-link px-2 link-light" aria-current="page" href="{% url 'store:home'%}">Home</a>
@@ -51,7 +56,7 @@
                 <a class="nav-link px-2 link-light" href="/contacts">Contacts</a>
               </li>
             </ul>
-            <form class="d-flex" style="margin-right:12%">
+            <form class="d-flex" style="margin-right:8%">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
               <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
@@ -62,12 +67,13 @@
               <ul class="dropdown-menu dropdown-menu-dark text-small">
 
                 {% if request.user.is_authenticated %}
-                  <li style="padding-left:1rem;">{{user.first_name}}'s Account'</li>
                   <li><a class="dropdown-item active" href="{% url 'account:dashboard'%}">My Profile</a></li>
                 {% else %}
                   <li><a class="dropdown-item active" href="{% url 'account:register'%}">Register</a></li>
                 {% endif %}
-                  <li><a class="dropdown-item" href="#">Settings</a></li>
+                {%if request.user.is_staff == True %}
+                  <li><a class="dropdown-item " href="{% url 'store:dashboard'%}">Dashboard</a></li>
+                {% endif %}
                   <li><hr class="dropdown-divider"></li>
                 {% if request.user.is_authenticated %} 
                   <li><a class="dropdown-item" href="{% url "account:logout" %}">Logout</a></li>
@@ -91,7 +97,7 @@
             </div>
             {% endwith %}
             <div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white"
                     class="bi bi-cart3" viewBox="0 0 16 16">
                     <path
                         d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
@@ -112,10 +118,10 @@
                 <div class="col-5 col-md-2 mb-3 text-white">
                   <h5>Branches</h5>
                   <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Durban - 0875422191</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Cape-Town - 0879665434</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pretoria - 0123659874</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Head-Office - 0123698754</a></li>
+                    <li class="nav-item mb-2 text-muted"><Durban - 0875422191</li>
+                    <li class="nav-item mb-2 text-muted">Cape-Town - 0879665434</li>
+                    <li class="nav-item mb-2 text-muted">Pretoria - 0123659874</li>
+                    <li class="nav-item mb-2 text-muted">Head-Office - 0123698754</li>
                   </ul>
                 </div>
           
@@ -132,10 +138,10 @@
                 <div class="col-5 col-md-2 mb-3 text-white">
                   <h5>Section</h5>
                   <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Quality</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Products</a></li>
+                    <li class="nav-item mb-2"><a href="{% url 'store:home'%}" class="nav-link p-0 text-muted">Home</a></li>
+                    <li class="nav-item mb-2"><a href="/about" class="nav-link p-0 text-muted">About</a></li>
+                    <li class="nav-item mb-2"><a href="/quality" class="nav-link p-0 text-muted">Quality</a></li>
+                    <li class="nav-item mb-2"><a href="/products" class="nav-link p-0 text-muted">Products</a></li>
                   </ul>
                 </div>
           
@@ -155,10 +161,10 @@
               <div class="d-flex flex-column flex-sm-row justify-content-between border-top text-white">
                 <p>&copy; 2022 SPMazibuko, Inc. All rights reserved.</p>
                 <ul class="list-unstyled d-flex">
-                  <li class="ms-3"><a class="link-dark" href="#"><i class="bi bi-twitter" style="font-size:25px;color:#2196F3"></i></a></li>
-                  <li class="ms-3"><a class="link-dark" href="#"><i class="bi bi-instagram" style="font-size:25px;color:#2196F3"></i></a></li>
-                  <li class="ms-3"><a class="link-dark" href="#"><i class="bi bi-facebook" style="font-size:25px;color:#2196F3"></i></a></li>
-                  <li class="ms-3"><a class="link-dark" href="#"><i class="bi bi-whatsapp" style="font-size:25px;color:#2196F3"></i></a></li>
+                  <li class="ms-3"><a class="link-dark" href="https://twitter.com/Blaqts"><i class="bi bi-twitter" style="font-size:25px;color:#2196F3"></i></a></li>
+                  <li class="ms-3"><a class="link-dark" href="https://www.instagram.com/sifisomazibuko2/"><i class="bi bi-instagram" style="font-size:25px;color:#2196F3"></i></a></li>
+                  <li class="ms-3"><a class="link-dark" href="https://www.facebook.com/sifiso.mazibuko3/"><i class="bi bi-facebook" style="font-size:25px;color:#2196F3"></i></a></li>
+                  <li class="ms-3"><a class="link-dark" href="https://wa.me/+27736825516"><i class="bi bi-whatsapp" style="font-size:25px;color:#2196F3"></i></a></li>
                 </ul>
               </div>
             </footer>
