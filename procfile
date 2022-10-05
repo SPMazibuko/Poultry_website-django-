@@ -1,1 +1,1 @@
-web:gunicorn wsgi:poultry_farm --log-file -
+web: gunicorn poultry_farm.wsgi --log-file -
