@@ -13,7 +13,7 @@
     content: '';
     position: "absolute";
     z-index: 10;
-    top: 23%;
+    top: 15%;
     left: 0;
     background: rgba(0, 0, 0, 0.5)
 }
@@ -22,7 +22,7 @@
     width: 100%;
     height: 90%;
     position: absolute;
-    top: 23%;
+    top: 15%;
     left: 0;
     z-index: 5;
     object-fit: cover;
@@ -33,7 +33,7 @@
     width: 100%;
     height: 90%;
     position: absolute;
-    top: 23%;
+    top: 15%;
     left: 0;
     z-index: 15;
     background: url('./texture.png');
