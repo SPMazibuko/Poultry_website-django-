@@ -130,7 +130,7 @@
     box-shadow: none;
   }
 
-  /* Bootstrap Over-ride */
+  /* Bootstrap Over-rid */
 @media (min-width: 1000px){
     .container{
         max-width: 1000px;
